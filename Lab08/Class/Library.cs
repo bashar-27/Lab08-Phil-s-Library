@@ -7,43 +7,45 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab08
+namespace Lab08.Class
 {
-    internal class Library : ILibrary
+    public class Library : ILibrary
     {
         private Dictionary<string, Book> ReserveABook = new Dictionary<string, Book>();
-        public int Count => ReserveABook.Count;
-        
+        public int Count => ReserveABook.Count();
 
-        public Library() {
+
+        public Library()
+        {
             ReserveABook = new Dictionary<string, Book>();
-    }
+        }
 
         public void Add(string title, string firstName, string lastName, int numberOfPages)
         {
             var book = new Book
             {
                 Title = title,
-                Author = firstName +" "+ lastName,
+                Author = firstName + " " + lastName,
                 Page = numberOfPages,
             };
-            ReserveABook.Add(title,book);
+            ReserveABook.Add(title, book);
         }
 
 
         public Book Borrow(string title)
         {
-            if (ReserveABook.ContainsKey(title)) {
+            if (ReserveABook.ContainsKey(title))
+            {
                 Book bookBorrow = ReserveABook[title];
                 ReserveABook.Remove(title);
                 return bookBorrow;
             }
-                return null;
-            }
+            return null;
+        }
 
         public void Return(Book book)
         {
-               ReserveABook?.Add(book.Title, book);
+            ReserveABook?.Add(book.Title, book);
         }
         public IEnumerator<Book> GetEnumerator()
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab08
 {
-    internal class Backpack<T> : IBag<T>
+    public class Backpack<T> : IBag<T>
     {
         private List<T> data;
         public Backpack() {

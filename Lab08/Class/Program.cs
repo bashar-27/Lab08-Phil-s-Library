@@ -1,6 +1,8 @@
-﻿namespace Lab08
+﻿using Lab08.Class;
+
+namespace Lab08
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
