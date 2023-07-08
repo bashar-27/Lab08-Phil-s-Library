@@ -22,24 +22,24 @@ namespace Lab08
                 Console.WriteLine($"{i}-{item.Title}");
                 i++;
             }
-            Console.WriteLine("\n\n---------------------");
+            Console.WriteLine("\n\n----------------------");
             Backpack<Book> backpack = new Backpack<Book>();
              Book book = libr.Borrow("HarryPotter");
             Book book1 = libr.Borrow("King of Greed");
 
             if(book != null ) {
                 backpack.Pack(book);
-                Console.WriteLine($"\n**Borrowed Book: {book.Title} by the author {book.Author}**\n");
+                Console.WriteLine($"\n**Borrowed Book: {book.Title} by the author {book.Author}**");
                 Console.WriteLine($"\n**Borrowed Book: {book1.Title} by the author {book1.Author}**\n");
 
                 Console.WriteLine("The library after you borrow some book: ");
                 i = 1;
                 foreach (var item in libr)
                 {
-                    Console.WriteLine($"{i}-{item.Title}");
+                    Console.WriteLine($"{i}- {item.Title}");
                     i++;
                 }
-                Console.WriteLine("\n\n---------------------");
+                Console.WriteLine("\n\n----------------------");
 
                 Console.WriteLine($"Lets unpack it and return it :");
                 Book bookReturn = backpack.Unpack(0);
@@ -50,7 +50,7 @@ namespace Lab08
                 i = 1;
                 foreach (var item in libr)
                 {
-                    Console.WriteLine($"{i}-{item.Title}");
+                    Console.WriteLine($"{i}- {item.Title}");
                     i++;
                 }
             }
